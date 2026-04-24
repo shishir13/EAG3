@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI News Notifier</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="header-left">
+        <div class="logo">🤖</div>
+        <div>
+          <h1>AI News Notifier</h1>
+          <p class="subtitle">Hacker News · AI & LLM</p>
+        </div>
+      </div>
+      <div id="statusBadge" class="badge badge--on">ON</div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <span class="row-label">Notifications</span>
+        <label class="toggle">
+          <input type="checkbox" id="enabledToggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <span class="row-label">Check every</span>
+        <select id="intervalSelect">
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="60" selected>1 hour</option>
+          <option value="120">2 hours</option>
+          <option value="240">4 hours</option>
+          <option value="360">6 hours</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="fetchNow" class="btn-primary">
+      <span id="fetchLabel">⚡ Fetch Now</span>
+    </button>
+
+    <div class="card article-card" id="articleCard">
+      <div class="article-tag">Latest Article</div>
+      <a id="articleLink" href="#" target="_blank" class="article-title">No article fetched yet</a>
+      <div id="articleMeta" class="article-meta"></div>
+      <div class="article-actions" id="articleActions" style="display:none">
+        <a id="hnLink" href="#" target="_blank" class="hn-link">View on HN</a>
+      </div>
+      <div id="lastFetched" class="last-fetched"></div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
